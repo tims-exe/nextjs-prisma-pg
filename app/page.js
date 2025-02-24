@@ -34,15 +34,15 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-4">Next.js 13 Todo App</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+      <div className="bg-black p-8 rounded shadow-md w-96">
+        <h1 className="text-2xl font-bold mb-4">Todo App</h1>
         <input
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}
           placeholder="Add a new task"
-          className="border p-2 w-full mb-4 rounded"
+          className="border p-2 w-full mb-4 rounded text-black"
         />
         <button
           onClick={addTodo}

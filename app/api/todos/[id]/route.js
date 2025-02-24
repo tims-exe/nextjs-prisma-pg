@@ -2,8 +2,8 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function PUT(req, { params }) {
-  const { id } = params;
+export async function PUT(req, context) {
+  const { id } = await context.params; // Await params here
   const body = await req.json();
   const { completed } = body;
 
@@ -15,8 +15,8 @@ export async function PUT(req, { params }) {
   return new Response(JSON.stringify(updatedTodo), { status: 200 });
 }
 
-export async function DELETE(_, { params }) {
-  const { id } = params;
+export async function DELETE(req, context) {
+  const { id } = await context.params; // Await params here
 
   await prisma.todo.delete({
     where: { id: Number(id) },
